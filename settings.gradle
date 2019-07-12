@@ -1,0 +1,15 @@
+rootProject.name = 'spring-cloud-sample'
+
+include 'springcloud-api'
+include 'springcloud-oauth'
+include 'springcloud-eureka-19990'
+include 'springcloud-provider:student-service-19991'
+include 'springcloud-provider:course-service-19992'
+include 'springcloud-provider:teacher-service-19993'
+include 'txlcn-tm-19994'
+include 'springcloud-gateway-19995'
+
+include 'springcloud-provider2:account-service-19996'
+include 'springcloud-provider2:business-service-19997'
+include 'springcloud-provider2:order-service-19998'
+include 'springcloud-provider2:storage-service-19999'

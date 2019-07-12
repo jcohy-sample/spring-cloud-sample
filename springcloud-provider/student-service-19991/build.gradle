@@ -1,0 +1,25 @@
+dependencies {
+
+    compile project(':springcloud-api')
+    compile project(':springcloud-oauth')
+    compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+    compile "org.springframework.cloud:spring-cloud-starter-openfeign"
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-data-redis"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa"
+    compile "org.springframework.boot:spring-boot-starter-data-jdbc"
+    compile "org.springframework.boot:spring-boot-starter-tomcat"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
+    compile "com.codingapi.txlcn:txlcn-tc:5.0.2.RELEASE"
+    compile "com.codingapi.txlcn:txlcn-txmsg-netty:5.0.2.RELEASE"
+//    compile "org.springframework.cloud:spring-cloud-starter-netflix-hystrix:${netflixVersion}"
+//    compile "org.springframework.cloud:spring-cloud-netflix-hystrix-stream:${netflixVersion}"
+//    compile "org.springframework.cloud:spring-cloud-starter-zipkin:${netflixVersion}"
+//    compile "org.springframework.cloud:spring-cloud-starter-bus-amqp:${netflixVersion}"
+    compile "com.google.code.gson:gson:2.8.5"
+    compile "com.alibaba:druid:1.0.31"
+    compile "mysql:mysql-connector-java:${mysqlConnectorJavaVersion}"
+    runtime "org.springframework.boot:spring-boot-devtools"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+}

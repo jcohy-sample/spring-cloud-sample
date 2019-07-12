@@ -1,0 +1,10 @@
+dependencies {
+    
+//    compile "org.springframework.cloud:spring-cloud-starter-netflix-hystrix:${netflixVersion}"
+//    compile "org.springframework.cloud:spring-cloud-netflix-hystrix-stream:${netflixVersion}"
+//    compile "org.springframework.cloud:spring-cloud-starter-zipkin:${netflixVersion}"
+//    compile "org.springframework.cloud:spring-cloud-starter-bus-amqp:${netflixVersion}"
+    compile "com.google.code.gson:gson:2.8.5"
+    testCompile "org.springframework.boot:spring-boot-starter-test"
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+}

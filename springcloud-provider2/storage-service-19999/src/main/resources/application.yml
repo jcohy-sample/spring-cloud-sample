@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: storage-service
+server:
+  port: 19999

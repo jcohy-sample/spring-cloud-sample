@@ -1,0 +1,97 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.6.RELEASE' apply false
+}
+
+description = "Spring Cloud Sample"
+
+ext {
+    lombokVersion = "1.18.4"
+    springCloudVersion="Greenwich.SR1"
+    mysqlConnectorJavaVersion = "8.0.16"
+    jjwtVersion = "0.9.0"
+    fastjsonVersion = "1.2.33"
+
+    seataVersion = "0.6.1"
+
+    druidStarterVersion = "1.1.10"
+    h2Version = "1.4.197"
+    alphaServerVersion = "0.2.0"
+    tomcatJdbcVersion = "8.5.31"
+}
+
+// 获取命令行参数，以指定不同的构建环境
+if (!hasProperty("env")) ext.env = "dev"
+
+
+allprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'maven-publish'
+    apply plugin: 'io.spring.dependency-management'
+
+    group 'jcohy-spring-cloud-sample'
+    version '1.0.0'
+
+
+    repositories {
+        mavenLocal()
+        maven {
+            url = 'https://repo.spring.io/libs-milestone'
+        }
+
+        maven {
+            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+
+        maven {
+            url = 'http://repo.maven.apache.org/maven2'
+        }
+    }
+
+}
+
+subprojects {
+    dependencyManagement {
+        imports {
+//            mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+
+        }
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+    }
+
+    repositories {
+        mavenLocal()
+        maven {
+            url = 'https://repo.spring.io/libs-milestone'
+        }
+
+        maven {
+            url = 'https://oss.sonatype.org/content/repositories/snapshots/'
+        }
+
+        maven {
+            url = 'http://repo.maven.apache.org/maven2'
+        }
+    }
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                from(components.java)
+            }
+        }
+    }
+
+    compileJava {
+        options.compilerArgs += ["-parameters"]
+    }
+}
+
