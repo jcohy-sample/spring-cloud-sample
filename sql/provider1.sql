@@ -1,7 +1,7 @@
-# demo_teacher
-DROP SCHEMA IF EXISTS demo_teacher;
-CREATE SCHEMA demo_teacher;
-USE demo_teacher;
+# db_teacher
+DROP SCHEMA IF EXISTS db_teacher;
+CREATE SCHEMA db_teacher;
+USE db_teacher;
 
 CREATE TABLE `teacher`  (
   `tid` int(11) NOT NULL AUTO_INCREMENT,
@@ -18,10 +18,10 @@ INSERT INTO `teacher` VALUES (3, '王五');
 
 SET FOREIGN_KEY_CHECKS = 1;
 
-# demo_course
-DROP SCHEMA IF EXISTS demo_course;
-CREATE SCHEMA demo_course;
-USE demo_course;
+# db_course
+DROP SCHEMA IF EXISTS db_course;
+CREATE SCHEMA db_course;
+USE db_course;
 CREATE TABLE `course`  (
   `cid` int(11) NOT NULL AUTO_INCREMENT,
   `cname` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
@@ -43,10 +43,10 @@ INSERT INTO `course` VALUES (7, '数学', 7);
 SET FOREIGN_KEY_CHECKS = 1;
 
 
-# demo_student
-DROP SCHEMA IF EXISTS demo_student;
-CREATE SCHEMA demo_student;
-USE demo_student;
+# db_student
+DROP SCHEMA IF EXISTS db_student;
+CREATE SCHEMA db_student;
+USE db_student;
 
 CREATE TABLE `sc`  (
   `sid` int(11) DEFAULT NULL,
