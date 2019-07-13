@@ -33,6 +33,8 @@
 
 [provider2](https://github.com/jiachao23/spring-cloud-sample/blob/master/sql/provider2.sql) : db_coount，db_order，db_storage
 
+**在启动服务前，需要先执行相应的脚本文件创建数据库。**
+
 ## 服务提供者说明
 
 springcloud-provider模块中的子模块 主要结合 txlcn-tm 使用。需要开启 txlcn-tm 分布式事务协调器。
@@ -45,11 +47,11 @@ springcloud-provider2模块中的子模块，主要结合seate使用。
 
 1、依次启动 **EurekaServer19990**  , **GatewayApplication1995** , **TMApplication19994** , **CourseProvider19992** , **TeacherProvider19993** , **TeacherProvider19991** 。
 
-启动TM后，我们在 http://localhost:19994/admin/index.html 可以进行登录，默认密码为 codingapi 。也可以在 application.yml 文件 通过 tx-lcn.manager.admin-key 属性 指定密码。
+启动TM后，我们在  http://localhost:19994/admin/index.html  可以进行登录，默认密码为 codingapi 。也可以在 application.yml 文件 通过 tx-lcn.manager.admin-key 属性 指定密码。
 
 ![TM](https://github.com/jiachao23/spring-cloud-sample/blob/master/images/tm.png)
 
-2、有关TM控制台的详细信息说明，请参考https://www.txlcn.org/zh-cn/docs/manageradmin.html
+2、有关TM控制台的详细信息说明，请参考  https://www.txlcn.org/zh-cn/docs/manageradmin.html
 
 3、关于TM使用的注意事项：
 
@@ -86,11 +88,11 @@ springcloud-provider2模块中的子模块，主要结合seate使用。
   
   - 目前网关提供了两个三个接口。这里只是一个简单的demo，具体的权限配置，需要自己在网关中手动实现。
   
-    http://localhost:19995/provider-student/student/score/add：添加学生
+    添加学生：[http://localhost:19995/provider-student/student/score/add](http://localhost:19995/provider-student/student/score/add)
   
-    http://localhost:19995/provider-student/student/score/2：获取学生信息
+    获取学生信息：[http://localhost:19995/provider-student/student/score/2](http://localhost:19995/provider-student/student/score/2)
   
-    http://localhost:19995/getToken/cloud：获取token
+    获取token：[http://localhost:19995/getToken/cloud](http://localhost:19995/getToken/cloud)
   - 本人接口测试使用的是RestCloud。导出的文件路径在  [SpringCloudDemoApi](https://github.com/jiachao23/spring-cloud-sample/blob/master/json/SpringCloudDemo.json)
     
   
