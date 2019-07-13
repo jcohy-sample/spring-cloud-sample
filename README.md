@@ -93,7 +93,7 @@ springcloud-provider2模块中的子模块，主要结合seate使用。
     获取学生信息：[http://localhost:19995/provider-student/student/score/2](http://localhost:19995/provider-student/student/score/2)
   
     获取token：[http://localhost:19995/getToken/cloud](http://localhost:19995/getToken/cloud)
-  - 本人接口测试使用的是RestCloud。导出的文件路径在  [SpringCloudDemoApi](https://github.com/jiachao23/spring-cloud-sample/blob/master/json/SpringCloudDemo.json)
+  - 本人接口测试使用的是restlet_client。导出的文件路径在  [SpringCloudDemoApi](https://github.com/jiachao23/spring-cloud-sample/blob/master/json/SpringCloudDemo.json)
     
   
   

@@ -1,13 +1,15 @@
 dependencies {
 
     compile project(':springcloud-api')
-    compile "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
+
+    compile('org.springframework.cloud:spring-cloud-starter-alibaba-nacos-config')
+    compile('org.springframework.cloud:spring-cloud-starter-alibaba-nacos-discovery')
     compile "org.springframework.cloud:spring-cloud-starter-openfeign"
     compile "org.springframework.boot:spring-boot-starter-web"
-    compile "org.springframework.boot:spring-boot-starter-data-redis"
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
 
     compile "io.seata:seata-all:${seataVersion}"
+    
     compile "org.springframework.boot:spring-boot-starter-actuator"
 
     compile "com.google.code.gson:gson:2.8.5"
