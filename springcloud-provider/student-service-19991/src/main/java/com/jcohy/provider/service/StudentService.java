@@ -15,5 +15,5 @@ public interface StudentService {
 
 	public StudentSocre getStudentSocre(Long id);
 
-	public String addStudentScore(StudentSocre studentSocre);
+	public String addStudentScore(StudentSocre studentSocre, String exFlag);
 }

@@ -1,9 +1,6 @@
 package com.jcohy.provider.service.impl;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import cn.xuanwuai.provider.dto.CourseDto;
 import com.codingapi.txlcn.tc.annotation.DTXPropagation;
@@ -39,6 +36,7 @@ public class StudentServiceImpl implements StudentService {
 
 	@Autowired
 	private ScRepository scRepository;
+
 	@Override
 	public Student add(Student student) {
 		return studentRepository.save(student);
@@ -81,9 +79,9 @@ public class StudentServiceImpl implements StudentService {
 	}
 
 	@Override
-	@TxcTransaction(propagation = DTXPropagation.SUPPORTS)
+	@LcnTransaction
 	@Transactional
-	public String addStudentScore(StudentSocre studentSocre) {
+	public String addStudentScore(StudentSocre studentSocre, String exFlag) {
 		String sname = studentSocre.getSname();
 
 		List<Map<String, Object>> mapList = studentSocre.getMapList();
@@ -109,6 +107,11 @@ public class StudentServiceImpl implements StudentService {
 
 			Sc sc = new Sc(student.getSid(),cDto.getCid(),score);
 			scRepository.save(sc);
+
+			// 置异常标志，DTX 回滚
+			if (Objects.nonNull(exFlag)) {
+				throw new IllegalStateException("by exFlag");
+			}
 		}
 		return "Successful";
 	}

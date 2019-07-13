@@ -25,7 +25,7 @@ public class CourseServiceImpl implements CourseService {
 	private PlatformTransactionManager platformTransactionManager;
 
 	@Override
-	@TxcTransaction(propagation = DTXPropagation.SUPPORTS)
+	@LcnTransaction(propagation = DTXPropagation.SUPPORTS)
 	@Transactional
 	public CourseDto add(Course course) {
 		return Course.ofDto(courseRepository.save(course));

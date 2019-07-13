@@ -8,11 +8,7 @@ import com.jcohy.provider.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -50,8 +46,8 @@ public class StudentController {
 	 * @return
 	 */
 	@RequestMapping(value = "/student/score/add", method = RequestMethod.POST)
-	public String addStudentScore(@RequestBody() StudentSocre studentSocre) {
-		return service.addStudentScore(studentSocre);
+	public String addStudentScore(@RequestBody() StudentSocre studentSocre, @RequestParam(value = "ex", required = false) String exFlag) {
+		return service.addStudentScore(studentSocre,exFlag);
 	}
 
 	/**

@@ -23,7 +23,7 @@ public class TeacherServiceImpl implements TeacherService {
 
 
 	@Override
-	@TxcTransaction(propagation = DTXPropagation.SUPPORTS)
+	@LcnTransaction(propagation = DTXPropagation.SUPPORTS)
 	@Transactional
 	public TeacherDto add(Teacher teacher) {
 		return Teacher.ofDto(teacherRepository.save(teacher));
