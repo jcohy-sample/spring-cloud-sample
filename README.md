@@ -6,6 +6,9 @@
 |  SpringBoot    | 2.1.6.RELEASE     |      |
 |  SpringCloud    | Greenwich.SR1     |      |
 |  Gradle    |   5.4.1   |      |
+| SpringCloud Alibaba | 0.9.1.BUILD-SNAPSHOT | |
+| alpha-server | 2.8.5 | |
+| tx-lcn | 5.0.2.RELEASE | |
 
 
 ## 模块说明
@@ -102,3 +105,8 @@ springcloud-provider2模块中的子模块，主要结合seate使用。
 
 [CodingApi官方文档](https://www.txlcn.org/zh-cn/docs/preface.html)
 
+[Nacos官网](https://nacos.io/zh-cn/index.html)
+
+[Seata官网](https://seata.io/zh-cn/)
+
+[codingAPi](https://www.txlcn.org/zh-cn/index.html)

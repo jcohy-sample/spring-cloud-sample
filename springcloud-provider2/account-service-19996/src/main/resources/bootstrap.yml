@@ -1,18 +1,24 @@
 spring:
   application:
-    name: account-service-19996
-
+    name: account-service
   cloud:
     nacos:
+      discovery:
+        server-addr: localhost:8848
+        namespace: bebac610-16ce-4990-bd27-70b3a35bc493
       config:
-        server-addr: 127.0.0.1:8848
-        namespace: dev
-        group: APP_CONFIG
+        server-addr: localhost:8848
+        namespace: bebac610-16ce-4990-bd27-70b3a35bc493
+        group: JCOHY_CONFIG
         prefix: ${spring.application.name}
         file-extension: yml
+management:
+  endpoints:
+    web:
+      exposure:
+        include*: "*"
 
-      discovery:
-        server-addr: 127.0.0.1:8848
-        namespace: dev
+
+
 
 

@@ -5,19 +5,29 @@ plugins {
 description = "Spring Cloud Sample"
 
 ext {
-
+    //================= framework =================
     springCloudVersion = "Greenwich.SR1"
     springCloudAlibabaVersion = '0.9.1.BUILD-SNAPSHOT'
-    mysqlConnectorJavaVersion = "8.0.16"
-    jjwtVersion = "0.9.0"
-    fastjsonVersion = "1.2.33"
-
+    txLcnVersion = "5.0.2.RELEASE"
     seataVersion = "0.6.1"
-    lombokVersion = "1.18.4"
-    druidStarterVersion = "1.1.10"
-    h2Version = "1.4.197"
     alphaServerVersion = "0.2.0"
+    
+    //================= datasource ================
+    mysqlConnectorJavaVersion = "8.0.16"
+    druidStarterVersion = "1.1.10"
+    
+    //=================json=======================
+    fastjsonVersion = "1.2.33"
+    gsonVersion = "2.8.5"
+    jjwtVersion = "0.9.0"
+  
+    //================= utils====================
+    lombokVersion = "1.18.4"
     tomcatJdbcVersion = "8.5.31"
+    
+    //================= test ====================
+    h2Version = "1.4.197"
+
 }
 
 // 获取命令行参数，以指定不同的构建环境
