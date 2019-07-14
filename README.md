@@ -9,6 +9,7 @@
 | SpringCloud Alibaba | 0.9.1.BUILD-SNAPSHOT | |
 | alpha-server | 2.8.5 | |
 | tx-lcn | 5.0.2.RELEASE | |
+| redis | 3.2.100 | |
 
 
 ## 模块说明
@@ -47,16 +48,25 @@ springcloud-provider2模块中的子模块，主要结合seate使用。
 
 #### 使用 Eureka 作为注册中心启动，通过 txlcn 来进行分布式事务管理。
 
+##### 1、启动
 
-1、依次启动 **EurekaServer19990**  , **GatewayApplication1995** , **TMApplication19994** , **CourseProvider19992** , **TeacherProvider19993** , **TeacherProvider19991** 。
+- 启动 tm 需要安装 redis
 
-启动TM后，我们在  http://localhost:19994/admin/index.html  可以进行登录，默认密码为 codingapi 。也可以在 application.yml 文件 通过 tx-lcn.manager.admin-key 属性 指定密码。
+- 依次启动 **EurekaServer19990**  , **GatewayApplication1995** , **TMApplication19994** , **CourseProvider19992** , **TeacherProvider19993** , **TeacherProvider19991** 。
 
-![TM](https://github.com/jiachao23/spring-cloud-sample/blob/master/images/tm.png)
 
-2、有关TM控制台的详细信息说明，请参考  https://www.txlcn.org/zh-cn/docs/manageradmin.html
+- 启动TM后，我们在  http://localhost:19994/admin/index.html  可以进行登录，默认密码为 codingapi 。也可以在 application.yml 文件 通过 tx-lcn.manager.admin-key 属性 指定密码。
 
-3、关于TM使用的注意事项：
+  ![TM](https://github.com/jiachao23/spring-cloud-sample/blob/master/images/tm.png)
+
+- Eureka注册中心控制台 
+
+
+
+
+##### 2、有关TM控制台的详细信息说明，请参考  https://www.txlcn.org/zh-cn/docs/manageradmin.html
+
+##### 3、关于TM使用的注意事项：
 
 - 关于application.yml配置文件不生效。
 
@@ -99,7 +109,14 @@ springcloud-provider2模块中的子模块，主要结合seate使用。
   - 本人接口测试使用的是restlet_client。导出的文件路径在  [SpringCloudDemoApi](https://github.com/jiachao23/spring-cloud-sample/blob/master/json/SpringCloudDemo.json)
     
   
-  
+#### 使用Nacos作为注册中心
+
+- 首先安装 nacos server，详情参考 [Nacos快速开始](https://nacos.io/zh-cn/docs/quick-start.html)
+- 登录 Nacos 管理控制台。[Nacos控制台](http://localhost:8848/nacos/)   帐号密码都为 nacos 。
+- 创建命名空间 。指定名称为 dev。创建成功之后，会生成一个 **命名空间ID**
+- 当您在应用中需要配置指定的 namespace 时，**填入的是命名空间 ID**
+#### 使用Nacos作为配置中心
+
 
 ## 参考文档
 
