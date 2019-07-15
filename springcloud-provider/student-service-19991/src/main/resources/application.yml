@@ -10,11 +10,11 @@ spring:
     url: jdbc:mysql://localhost:3306/db_student?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false              # 数据库名称
     username: root
     password: jcohy1203
-    dbcp2:
-      min-idle: 5                                           # 数据库连接池的最小维持连接数
-      initial-size: 5                                       # 初始化连接数
-      max-total: 5                                          # 最大连接数
-      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+#    dbcp2:
+#      min-idle: 5                                           # 数据库连接池的最小维持连接数
+#      initial-size: 5                                       # 初始化连接数
+#      max-total: 5                                          # 最大连接数
+#      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
 
    devtools:
      restart:

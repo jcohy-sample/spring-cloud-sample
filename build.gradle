@@ -15,6 +15,7 @@ ext {
     //================= datasource ================
     mysqlConnectorJavaVersion = "8.0.16"
     druidStarterVersion = "1.1.10"
+    druidVersion = "1.0.31"
     
     //=================json=======================
     fastjsonVersion = "1.2.33"

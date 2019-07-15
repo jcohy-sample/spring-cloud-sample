@@ -117,6 +117,22 @@ springcloud-provider2模块中的子模块，主要结合seate使用。
 - 当您在应用中需要配置指定的 namespace 时，**填入的是命名空间 ID**
 #### 使用Nacos作为配置中心
 
+- 登录 nacos 控制台，在配置列表添加一个配置。添加配置时注意在那个 **命名空间**  下创建的，在引用时需要指定 命名空间才能生效。
+
+  `dataId` 的完整格式如下：
+
+     **${prefix}-${spring.profile.active}.${file-extension}**
+
+  - prefix 默认为 spring.application.name 的值，也可以通过配置项spring.cloud.nacos.config.prefix来配置。
+
+  - spring.profile.active 即为当前环境对应的 profile。注意：当 spring.profile.active 为空时，对应的连接符 - 也将不存在，dataId 的拼接格式变为：**${prefix}.${file-extension}**
+
+  - `file-exetension` 为配置内容的数据格式，可以通过配置项 `spring.cloud.nacos.config.file-extension` 来配置。目前只支持 `properties` 和 `yaml` 类型。
+
+  - 通过 Spring Cloud 原生注解 `@RefreshScope` 实现配置自动更新
+
+- 
+
 
 ## 参考文档
 

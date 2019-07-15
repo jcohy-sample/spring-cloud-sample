@@ -7,7 +7,7 @@ spring:
    datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: com.mysql.cj.jdbc.Driver              # mysql驱动包
-    url: jdbc:mysql://localhost:3306/db_course?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false              # 数据库名称
+    url: jdbc:mysql://localhost:3306/db_course?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
     username: root
     password: jcohy1203
     dbcp2:
@@ -15,7 +15,9 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-      
+
+    druid:
+      url:
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
